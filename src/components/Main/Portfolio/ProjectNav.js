@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -11,29 +12,20 @@ const useStyles = makeStyles(theme => ({
     margin: theme.margins.small,
     fontFamily: theme.fontFamily.clickable,
     color: theme.colors.white,
-    backgroundImage: theme.backgroundImage.clickable
+    backgroundImage: theme.backgroundImage.project
   }
 }))
 
-function ContactButton() {
+function ProjectNav() {
   const classes = useStyles()
 
-  function sendEmail() 
-{
-    window.location = "mailto:matthew.w.cook94@gmail.com"
-}
-
   return(
-    <Button 
-      variant='contained' 
-      className={classes.button} 
-      onClick={event => {
-        event.preventDefault()
-        sendEmail()
-      }}>
-      Contact
-    </Button>
+    <Grid container justify='center'>
+      <Button className={classes.button} variant='contained' align='center'>
+        CoffeeMaps
+      </Button>
+    </Grid>
   )
 }
 
-export default ContactButton
+export default ProjectNav

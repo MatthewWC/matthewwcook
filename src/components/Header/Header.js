@@ -2,41 +2,28 @@ import React from 'react'
 
 import Grid from '@material-ui/core/Grid'
 
-import Picture from './Picture'
+import Nav from './Nav'
 import Title from './Title'
-import ContactButton from './ContactButton'
 import Location from './Location'
-import NavButton from '../NavButton'
+import ContactButton from './ContactButton'
 
-function Header() {
+function Header({ onClick }) {
 
   return(
     <Grid container justify='center'>
-      <Grid item xs={4}>
-        <Location/>
-      </Grid>
-      <Grid item xs={4}>
-        <Picture/>
-      </Grid>
-      <Grid item xs={4} style={{display: 'flex', justifyContent: 'flex-end', height: '25%'}}>
-        <ContactButton/>
-      </Grid>
-      <Grid style={{backgroundColor: 'orange'}} container justify='space-evenly'>
-        <Grid item xs={1}>
-          <NavButton name='Portfolio'/>
+      <Grid container justift='center'> 
+        <Grid item xs={2}>
+          <Location/>
         </Grid>
-        <Grid item xs={1}>
-          <NavButton name='Resume'/>
-        </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={8}>
           <Title/>
         </Grid>
-        <Grid item xs={1}>
-          <NavButton name='Github'/>
+        <Grid item xs={2} style={{display: 'flex', justifyContent: 'flex-end'}}>
+          <ContactButton/>
         </Grid>
-        <Grid item xs={1}>
-          <NavButton name='About Me'/>
-        </Grid>
+      </Grid>
+      <Grid container justify='center'>
+        <Nav onClick={onClick}/>
       </Grid>
     </Grid>
   )

@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme => ({
   typography: {
-    margin: theme.margins.small
+    padding: theme.paddings.small,
   }
 }))
 

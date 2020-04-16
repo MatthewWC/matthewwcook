@@ -2,23 +2,27 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Header from './Header/Header'
-import Home from './Home/Home'
-
-// header with name and title
-// nav for resume, linkedin, github, portfolio, about me
-// resume is link to google drive,
-// button for linkedin,
-// button for github,
-// portfolio is a page that has links to completed work
-// about me is page briefly about myself
-// picture of myself
+import Main from './Main/Main'
 
 function App() {
+  // state that changes current display from onclick portfolio/about me
+  const [visibleComponent, setVisibleComponent] = React.useState(false)
+
+  function onClick(event, buttonClicked){
+    switch(buttonClicked){
+      case 'portfolio':
+        setVisibleComponent(buttonClicked)
+        break
+      default:
+        break
+    }
+  }
+
   return (
     <Router>
-      <Header/>
+      <Header onClick={onClick}/>
       <Switch>
-        <Route exact path={'/'} render={props => <Home {...props} />}/>
+        <Route exact path={'/'} render={props => <Main visibleComponent={visibleComponent} {...props} />}/>
       </Switch>
     </Router>
   )
