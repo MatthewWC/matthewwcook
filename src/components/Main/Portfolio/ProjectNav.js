@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     width: theme.size.button.width,
     padding: theme.paddings.small,
     margin: theme.margins.small,
-    fontFamily: theme.fontFamily.clickable,
+    fontFamily: theme.fontFamily.title,
     color: theme.colors.white,
     backgroundImage: theme.backgroundImage.project
   }

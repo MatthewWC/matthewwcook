@@ -10,12 +10,8 @@ function CoffeeMaps() {
 
   return(
     <Grid container justify='center'>
-      <Grid item md={6}>
-        <ProjectImage/>
-      </Grid>
-      <Grid item md={6}>
-        <ProjectInfo/>
-      </Grid>
+      <ProjectImage/>
+      <ProjectInfo/>
     </Grid>
   )
 }

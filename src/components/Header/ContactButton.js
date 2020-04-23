@@ -11,17 +11,19 @@ const useStyles = makeStyles(theme => ({
     margin: theme.margins.small,
     fontFamily: theme.fontFamily.clickable,
     color: theme.colors.white,
-    backgroundImage: theme.backgroundImage.clickable
+    backgroundImage: theme.backgroundImage.clickable,
+    [theme.breakpoints.down('xs')]: {
+      width: '100%'
+    },
   }
 }))
 
 function ContactButton() {
   const classes = useStyles()
 
-  function sendEmail() 
-{
+  function sendEmail() {
     window.location = "mailto:matthew.w.cook94@gmail.com"
-}
+  }
 
   return(
     <Button 

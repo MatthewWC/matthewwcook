@@ -2,10 +2,12 @@ import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   paddings: {
+    xSmall: '5px',
     small: '10px',
     medium: '20px'
   },
   margins: {
+    xSmall: '5px',
     small: '10px',
     medium: '20px',
     large: '50px'

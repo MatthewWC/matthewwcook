@@ -5,42 +5,69 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import TechStack from './TechStack'
-import Description from './Description'
+import ReactIcon from '../Skills/ReactIcon'
+import NodeIcon from '../Skills/NodeIcon'
+import JsIcon from '../Skills/JsIcon'
+import HtmlIcon from '../Skills/HtmlIcon'
+import CssIcon from '../Skills/CssIcon'
 
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: theme.margins.small
+    margin: theme.margins.small,
+    width: '500px',
+    height: '100%',
+    maxWidth: '500px',
+    [theme.breakpoints.down('xs')]: {
+      width: '300px',
+    },
   },
   paper: {
-    width: '500px',
-    height: '410px',
-    backgroundImage: theme.backgroundImage.project,
-    padding: '5px'
+    padding: theme.paddings.xSmall,
+    height: '100%',
+    width: '100%',
+    backgroundImage: theme.backgroundImage.project
+  },
+  innerGrid: {
+    padding: '10px', 
+    backgroundImage: 'linear-gradient(#868f96, #596164)'
   },
   typography: {
     padding: theme.paddings.small,
     color: theme.colors.white,
-    fontFamily: theme.fontFamily.clickable
+    fontFamily: theme.fontFamily.title,
   },
 }))
 
 function ProjectInfo() {
   const classes = useStyles()
 
-  // toggle description or tech stack
   return(
     <Grid className={classes.root} container justify='center'>
       <Paper className={classes.paper}>
         <Typography className={classes.typography} align='center'>
           TECH STACK
         </Typography>
-        <TechStack/>
+        <Grid className={classes.innerGrid} container justify='space-evenly'>
+          <ReactIcon/>
+          <NodeIcon/>
+          <JsIcon/>
+          <HtmlIcon/>
+          <CssIcon/>
+        </Grid>
         <Typography className={classes.typography} align='center'>
           DESCRIPTION
         </Typography>
-        <Description/>
+        <Paper >
+          <Grid className={classes.innerGrid} container justify='space-evenly'>
+            <Typography align='center'>
+              Although rough around the edges, this was my first true
+              full stack application. Using Docker, DigitalOcean and Cloudflare
+              This website was a great stepping stone in learning the ins and outs
+              of basic to intermediate skills in development.
+            </Typography>
+          </Grid>
+        </Paper>
       </Paper>
     </Grid>
   )

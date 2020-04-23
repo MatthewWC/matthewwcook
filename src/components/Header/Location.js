@@ -6,6 +6,10 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles(theme => ({
   typography: {
     padding: theme.paddings.small,
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      textAlign: 'center'
+    },
   }
 }))
 

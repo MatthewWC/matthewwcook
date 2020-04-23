@@ -6,15 +6,23 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: theme.margins.small
-  },
-  paper: {
-    padding: '5px',
-    backgroundImage: theme.backgroundImage.project
-  },  
-  image: {
+    margin: theme.margins.small,
     width: '500px',
-    height: '405px',
+    height: '419px',
+    [theme.breakpoints.down('xs')]: {
+      width: '300px',
+      height: '250px',
+    }
+  }, 
+  paper: {
+    padding: theme.paddings.xSmall,
+    height: '100%',
+    width: '100%',
+    backgroundImage: theme.backgroundImage.project
+  },
+  image: {
+    height: '100%',
+    width: '100%'
   }
 }))
 
@@ -22,7 +30,14 @@ function ProjectImage() {
   const classes = useStyles()
 
   return(
-    <Grid className={classes.root} container justify='center'>
+    <Grid 
+      onClick={event => {
+        event.preventDefault()
+        window.open('http://coffeemaps.matthewwcook.com/')
+      }}
+      className={classes.root} 
+      container 
+      justify='center'>
       <Paper className={classes.paper}>
         <img className={classes.image} src='coffeemaps.png' alt='coffeemaps'/>
       </Paper>

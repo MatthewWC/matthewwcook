@@ -9,7 +9,7 @@ function Portfolio() {
 
   return(
     <Grid container justify='center' style={{padding: '10px'}}>
-      <Grid item xs={12}>
+      <Grid item xs={12} >
         <ProjectNav/>
       </Grid>
       <Grid item xs={12}>
