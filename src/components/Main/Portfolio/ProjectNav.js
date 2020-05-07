@@ -16,13 +16,28 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function ProjectNav() {
+function ProjectNav({ onClick }) {
   const classes = useStyles()
 
   return(
     <Grid container justify='center'>
-      <Button className={classes.button} variant='contained' align='center'>
+      <Button 
+        className={classes.button} 
+        variant='contained' 
+        align='center'
+        onClick={event => {
+          onClick('coffee maps')
+        }}>
         CoffeeMaps
+      </Button>
+      <Button
+        className={classes.button} 
+        variant='contained' 
+        align='center'
+        onClick={event => {
+          onClick('adams family')
+        }}>
+        Adams Family 
       </Button>
     </Grid>
   )
